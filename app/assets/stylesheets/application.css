@@ -12,11 +12,12 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap.min
+ *= require font-awesome
+ *= require icon-set
+ *= require jcarousel
+ *= require overwrite
+ *= require prettyPhoto
+ *= require style
+
  */
- require_bootstrap.min
- require_font-awesome
- require_icon-set
- require_jcarousel
- require_overwrite
- require_prettyPhoto
- require_style
