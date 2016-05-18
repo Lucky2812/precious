@@ -113,4 +113,40 @@ $(document).ready(function($) {
 		}
 	)	
 	
-});	
+});
+
+// For email validation
+
+function validateForm() {
+    var x = document.forms["myForm"]["username"].value;
+    if (x == "" || x == " "){
+      $("#username").css("border-color", "red");
+    }else{
+      $("#username").removeAttr("style");
+    }
+
+    var sEmail = $('#useremail').val();
+    if ($.trim(sEmail).length == 0) {
+      $("#useremail").css("border-color", "red");
+      e.preventDefault();
+    }
+    if (validateEmail(sEmail)) {
+    }
+    else {
+      $("#useremail").css("border-color", "red");
+      e.preventDefault();
+    }
+}
+
+$(document).on('change', 'input', function(){
+	$(this).removeAttr("style");
+});
+function validateEmail(sEmail) {
+  var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+  if (filter.test(sEmail)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
